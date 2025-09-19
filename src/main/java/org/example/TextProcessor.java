@@ -16,4 +16,13 @@ public class TextProcessor {
             throw new IllegalArgumentException("Word length must be positive");
         }
     }
+
+    private static int appendChar(StringBuilder currentWord, char c, int letterCount) {
+        currentWord.append(c);
+        if (Character.isLetter(c)) {
+            letterCount++;
+        }
+
+        return letterCount;
+    }
 }
