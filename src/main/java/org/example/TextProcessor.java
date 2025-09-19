@@ -5,6 +5,29 @@ public class TextProcessor {
     public static void main(String[] args) {
     }
 
+    public static StringBuilder replaceWords(StringBuilder text, StringBuilder replacement, int wordLength) {
+        validateInputs(text, replacement, wordLength);
+
+        StringBuilder result = new StringBuilder();
+        StringBuilder currentWord = new StringBuilder();
+        int letterCount = 0;
+
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+
+            if (isWordCharacter(c)) {
+                letterCount = appendChar(currentWord, c, letterCount);
+            } else {
+                flushWord(result, currentWord, replacement, wordLength, letterCount);
+                result.append(c);
+                letterCount = 0;
+            }
+        }
+
+        flushWord(result, currentWord, replacement, wordLength, letterCount);
+        return result;
+    }
+
     private static void validateInputs(StringBuilder text, StringBuilder replacement, int wordLength) {
         if (text == null || text.length() == 0) {
             throw new IllegalArgumentException("Input text is empty");
