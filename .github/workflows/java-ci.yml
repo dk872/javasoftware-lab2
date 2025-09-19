@@ -27,5 +27,5 @@ jobs:
     - name: Run tests
       run: mvn test
 
-    - name: Run MatrixProcessor
-      run: java -cp target/classes org.example.MatrixProcessor
+    - name: Run TextProcessor
+      run: java -cp target/classes org.example.TextProcessor
