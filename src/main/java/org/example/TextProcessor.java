@@ -25,4 +25,12 @@ public class TextProcessor {
 
         return letterCount;
     }
+
+    private static void flushWord(StringBuilder result, StringBuilder word,
+                                  StringBuilder replacement, int wordLength, int letterCount) {
+        if (word.length() == 0) return;
+
+        result.append(letterCount == wordLength ? replacement : word);
+        word.setLength(0);
+    }
 }
