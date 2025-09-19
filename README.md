@@ -1,8 +1,7 @@
 # Java_software-lab2
 
 ## Description
-This project provides a text processing utility that replaces words of a specified length in a given text with a custom replacement string.  
-It is implemented in Java using `StringBuilder` for efficient string manipulation and includes input validation and exception handling. 
+This project provides a text processing utility that replaces words of a specified length in a given text with a custom replacement string. It is implemented in Java using `StringBuilder` for efficient string manipulation and includes input validation and exception handling. 
 
 ## Calculation of the task variant
 Number in the group list: **15**;
