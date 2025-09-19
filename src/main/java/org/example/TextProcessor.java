@@ -3,6 +3,19 @@ package org.example;
 public class TextProcessor {
 
     public static void main(String[] args) {
+        try {
+            StringBuilder text = new StringBuilder("Write tests first, then build the features.");
+            StringBuilder replacement = new StringBuilder("$$$");
+            int wordLength = 5;
+
+            System.out.println("Initial text: " + text);
+            StringBuilder result = replaceWords(text, replacement, wordLength);
+            System.out.println("Processed text: " + result);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Input error: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Unknown error: " + e.getMessage());
+        }
     }
 
     public static StringBuilder replaceWords(StringBuilder text, StringBuilder replacement, int wordLength) {
