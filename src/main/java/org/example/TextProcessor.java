@@ -33,4 +33,8 @@ public class TextProcessor {
         result.append(letterCount == wordLength ? replacement : word);
         word.setLength(0);
     }
+
+    private static boolean isWordCharacter(char c) {
+        return Character.isLetter(c) || c == '\'' || c == '’';
+    }
 }
