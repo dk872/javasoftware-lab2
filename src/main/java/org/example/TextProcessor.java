@@ -70,7 +70,7 @@ public class TextProcessor {
         word.setLength(0);
     }
 
-    private static boolean isWordCharacter(char c) {
-        return Character.isLetter(c) || c == '\'' || c == '’';
+    private static boolean isWordCharacter(char currentChar) {
+        return Character.isLetter(currentChar) || currentChar == '\'' || currentChar == '’';
     }
 }
