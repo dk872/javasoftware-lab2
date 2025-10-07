@@ -46,7 +46,7 @@ public class TextProcessor {
             throw new IllegalArgumentException("Input text is empty");
         }
         if (replacement == null) {
-            throw new IllegalArgumentException("Replacement is empty");
+            throw new IllegalArgumentException("Replacement is null");
         }
         if (wordLength <= 0) {
             throw new IllegalArgumentException("Word length must be positive");
