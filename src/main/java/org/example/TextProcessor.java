@@ -26,13 +26,13 @@ public class TextProcessor {
         int letterCount = 0;
 
         for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
+            char currentChar = text.charAt(i);
 
-            if (isWordCharacter(c)) {
-                letterCount = appendChar(currentWord, c, letterCount);
+            if (isWordCharacter(currentChar)) {
+                letterCount = appendChar(currentWord, currentChar, letterCount);
             } else {
                 flushWord(result, currentWord, replacement, wordLength, letterCount);
-                result.append(c);
+                result.append(currentChar);
                 letterCount = 0;
             }
         }
@@ -53,9 +53,9 @@ public class TextProcessor {
         }
     }
 
-    private static int appendChar(StringBuilder currentWord, char c, int letterCount) {
-        currentWord.append(c);
-        if (Character.isLetter(c)) {
+    private static int appendChar(StringBuilder currentWord, char currentChar, int letterCount) {
+        currentWord.append(currentChar);
+        if (Character.isLetter(currentChar)) {
             letterCount++;
         }
 
